@@ -22,37 +22,6 @@ O trabalho foi desenvolvido para consolidar conhecimentos em:
 
 ---
 
-## 🗂️ Estrutura do Projeto
-
-`
-AdventureWorks-DW/
-│
-├── etl/
-│   ├── extract.py           # Script para extração dos dados (SQL Server → Python)
-│   ├── transform.py         # Script para tratamento e cálculos
-│   ├── load.py              # Script para carga no PostgreSQL (DW)
-│   └── main_etl.py          # Pipeline completa integrada
-│
-├── sql/
-│   ├── create_dw.sql        # Criação das tabelas dimensionais e fato
-│   ├── kpis_queries.sql     # Queries para indicadores
-│   └── staging_tables.sql   # Criação de área staging
-│
-├── dashboard/
-│   └── adventureworks_dashboard.pbix   # Arquivo do Power BI ou similar
-│
-├── docs/
-│   ├── modelo_dimensional.png         # Diagrama Star Schema
-│   ├── dicionario_de_dados.xlsx       # Dicionário de dados
-│   └── artigo_final.pdf               # Documento acadêmico final
-│
-├── requirements.txt        # Dependências Python
-├── README.md               # Documentação do projeto
-└── .gitignore
-`
-
----
-
 ## 🔧 Tecnologias Utilizadas
 | Tecnologia | Finalidade |
 |-------------|------------|
