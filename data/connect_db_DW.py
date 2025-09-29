@@ -22,9 +22,8 @@ def create_db_dw():
         except Exception as e:
             if 'already exists' in str(e):
                 print("Banco já existe!")
-                return False
-            else:
-                raise
+            return False
+
 
     return True
 
@@ -39,6 +38,26 @@ def create_tables_dw():
             """
                 -- criar schemas
                 CREATE SCHEMA IF NOT EXISTS staging;
+                CREATE TABLE IF NOT EXISTS staging.stg_sales (
+                sales_order_id      INT,
+                order_date          DATE,
+                due_date            DATE,
+                ship_date           DATE,
+                customer_id         INT,
+                salesperson_id      INT,
+                territory_id        INT,
+                sales_order_detail_id INT,
+                product_id          INT,
+                order_qty           INT,
+                unit_price          NUMERIC(12,2),
+                unit_price_discount NUMERIC(12,2),
+                line_total          NUMERIC(12,2),
+                standard_cost       NUMERIC(12,2),
+                sales_amount        NUMERIC(12,2),
+                cost_amount         NUMERIC(12,2),
+                profit_amount       NUMERIC(12,2),
+                loaded_at           TIMESTAMP DEFAULT now()
+                );
                 CREATE SCHEMA IF NOT EXISTS dw;
                 -- dim_date
                 CREATE TABLE IF NOT EXISTS dw.dim_date (
