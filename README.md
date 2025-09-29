@@ -99,20 +99,17 @@ O dashboard foi criado no **Power BI** para visualização dos KPIs.
 
 ---
 
-### **3. Criar Estrutura no PostgreSQL**
+### **3. Executar o main.py**
 
-```bash
-psql -U postgres -d dw_adventure -f sql/create_dw.sql
-```
 
 ---
 
 ## 🤝 Contribuidores
 
-* **Aluno 1** - [GitHub](https://github.com/aluno1)
-* **Aluno 2** - [GitHub](https://github.com/aluno2)
-* **Aluno 3** - [GitHub](https://github.com/aluno3)
-* **Aluno 4** - [GitHub](https://github.com/aluno4)
+* **Pedro Arthur** - [GitHub](https://github.com/aluno1)
+* **João Vitor** - [GitHub](https://github.com/aluno2)
+* **Mikael Mathias** - [GitHub](https://github.com/aluno3)
+* **Beatriz** - [GitHub](https://github.com/aluno4)
 
 ---
 
