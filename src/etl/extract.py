@@ -9,9 +9,7 @@ def extract_aw():
     d.UnitPriceDiscount, d.LineTotal
     FROM Sales.SalesOrderHeader h
     JOIN Sales.SalesOrderDetail d on h.SalesOrderID = d.SalesOrderID
-    WHERE h.OrderDate >= ?
+    WHERE h.OrderDate >= :watermark
     '''
-    # parâmetro watermark
-    watermark = '2001-01-01' # exemplo: última data processada
-    df = pd.read_sql(query, aw_engine, params=[watermark])
+    df = pd.read_sql(query, aw_engine, params={"watermark": "2001-01-01"})
     return df
