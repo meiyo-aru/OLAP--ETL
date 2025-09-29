@@ -24,7 +24,7 @@ O trabalho foi desenvolvido para consolidar conhecimentos em:
 
 ## 🗂️ Estrutura do Projeto
 
-'''
+`
 AdventureWorks-DW/
 │
 ├── etl/
@@ -49,8 +49,7 @@ AdventureWorks-DW/
 ├── requirements.txt        # Dependências Python
 ├── README.md               # Documentação do projeto
 └── .gitignore
-'''
-
+`
 
 ---
 
