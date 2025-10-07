@@ -10,8 +10,8 @@ df = extract_aw()
 transform_aw(df)
 load_aw(df)
 
-populate_fact_sales(pg_engine)
-populate_dim_date(pg_engine)
+populate_dim_date(pg_engine)         
 populate_dim_customer(pg_engine)
 populate_dim_product(pg_engine)
+populate_fact_sales(pg_engine)       
 

@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 def connect_db_dw(db_name="postgres"):
     try:
         engine = create_engine(
-            f"postgresql+psycopg2://postgres:1234@localhost:5432/{db_name}",
+            f"postgresql+psycopg2://postgres:22609390aBCDE!@localhost:5432/{db_name}",
             isolation_level="AUTOCOMMIT" 
         )
         return engine
@@ -39,24 +39,39 @@ def create_tables_dw():
                 -- criar schemas
                 CREATE SCHEMA IF NOT EXISTS staging;
                 CREATE TABLE IF NOT EXISTS staging.stg_sales (
-                sales_order_id      INT,
-                order_date          DATE,
-                due_date            DATE,
-                ship_date           DATE,
-                customer_id         INT,
-                salesperson_id      INT,
-                territory_id        INT,
-                sales_order_detail_id INT,
-                product_id          INT,
-                order_qty           INT,
-                unit_price          NUMERIC(12,2),
-                unit_price_discount NUMERIC(12,2),
-                line_total          NUMERIC(12,2),
-                standard_cost       NUMERIC(12,2),
-                sales_amount        NUMERIC(12,2),
-                cost_amount         NUMERIC(12,2),
-                profit_amount       NUMERIC(12,2),
-                loaded_at           TIMESTAMP DEFAULT now()
+                    freight_amount NUMERIC(12,2),
+                    sales_order_id INT,
+                    order_date DATE,
+                    due_date DATE,
+                    ship_date DATE,
+                    customer_id INT,
+                    salesperson_id INT,
+                    territory_id INT,
+                    sales_order_detail_id INT,
+                    product_id INT,
+                    order_qty INT,
+                    unit_price NUMERIC(12,2),
+                    unit_price_discount NUMERIC(12,2),
+                    line_total NUMERIC(12,2),
+                    freight NUMERIC(12,2),
+                    product_name TEXT,
+                    product_number TEXT,
+                    category TEXT,
+                    subcategory TEXT,
+                    standard_cost NUMERIC(12,2),
+                    list_price NUMERIC(12,2),
+                    full_name TEXT,
+                    email TEXT,
+                    phone TEXT,
+                    address TEXT,
+                    city TEXT,
+                    state TEXT,
+                    country TEXT,
+                    sales_amount NUMERIC(12,2),
+                    cost_amount NUMERIC(12,2),
+                    profit_amount NUMERIC(12,2),
+                    discount_amount NUMERIC(12,2),
+                    loaded_at TIMESTAMP DEFAULT now()
                 );
                 CREATE SCHEMA IF NOT EXISTS dw;
                 -- dim_date
@@ -122,5 +137,6 @@ def create_tables_dw():
         except Exception as e:
             raise
     
+
 create_db_dw()
 create_tables_dw()

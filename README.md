@@ -22,6 +22,45 @@ O trabalho foi desenvolvido para consolidar conhecimentos em:
 
 ---
 
+## 🗂️ Estrutura do Projeto
+
+
+
+OLAP-ETL/
+│
+├── data/
+│   ├── connect_db_AW.py         # Conexão com SQL Server (fonte)
+│   └── connect_db_DW.py         # Conexão e criação do DW (PostgreSQL)
+│
+├── src/
+│   └── etl/
+│       ├── extract.py           # Extração dos dados do SQL Server
+│       ├── transform.py         # Transformação e cálculos
+│       ├── load.py              # Carga no staging do DW
+│       └── populate.py          # População das dimensões e fato
+│
+├── sql/
+│   ├── create_dw_schema.sql     # Criação das tabelas do DW
+│   ├── create_staging_tables.sql# Criação das tabelas staging
+│   └── kpis_queries.sql         # Queries SQL dos KPIs
+│
+├── dashboard/
+│   └── adventureworks_dashboard.pbix   # Dashboard Power BI (ou .py para Streamlit)
+│
+├── docs/
+│   ├── modelo_dimensional.png         # Diagrama Star Schema
+│   ├── dicionario_dw.md               # Dicionário de dados
+│   └── projeto_artigo_unisales.md     # Artigo acadêmico
+│
+├── main.py                   # Pipeline ETL principal
+├── requirements.txt          # Dependências Python
+├── README.md                 # Documentação do projeto
+└── .gitignore
+
+
+
+---
+
 ## 🔧 Tecnologias Utilizadas
 | Tecnologia | Finalidade |
 |-------------|------------|
@@ -66,16 +105,21 @@ O modelo foi desenvolvido para otimizar a análise de vendas, clientes e produto
 
 ---
 
+
 ## 🖥️ Dashboard
 
-O dashboard foi criado no **Power BI** para visualização dos KPIs.
+O dashboard pode ser criado no **Power BI** (arquivo `.pbix`), **Metabase** ou **Streamlit**. Exemplos de páginas:
 
-* Visão geral de vendas
-* Evolução temporal
-* Análise por território e vendedor
-* Produtos mais vendidos
+- Visão geral de vendas e KPIs
+- Evolução temporal
+- Análise por território e vendedor
+- Produtos mais vendidos
 
-> Arquivo disponível em: `dashboard/adventureworks_dashboard.pbix`
+> Exemplo Power BI: salve o arquivo em `dashboard/adventureworks_dashboard.pbix`.
+
+> Exemplo Streamlit: crie um script Python em `dashboard/streamlit_app.py` usando pandas e plotly/matplotlib para ler os dados do DW e exibir os KPIs.
+
+**Dica:** Use as queries do arquivo `sql/kpis_queries.sql` para alimentar os gráficos do dashboard.
 
 ---
 
@@ -99,19 +143,29 @@ O dashboard foi criado no **Power BI** para visualização dos KPIs.
 
 ---
 
+
+
 ### **3. Executar o main.py**
 
+```bash
+psql -U postgres -d AdventureWorksDW -f sql/create_dw_schema.sql
+psql -U postgres -d AdventureWorksDW -f sql/create_staging_tables.sql
+```
+
+Ou execute `data/connect_db_DW.py` para criar o banco e as tabelas via Python.
 
 ---
+
 
 ## 🤝 Contribuidores
 
-* **Pedro Arthur** - [GitHub](https://github.com/aluno1)
-* **João Vitor** - [GitHub](https://github.com/aluno2)
-* **Mikael Mathias** - [GitHub](https://github.com/aluno3)
-* **Beatriz** - [GitHub](https://github.com/aluno4)
+* **Aluno 1** - [GitHub](https://github.com/aluno1)
+* **Aluno 2** - [GitHub](https://github.com/aluno2)
+* **Aluno 3** - [GitHub](https://github.com/aluno3)
+* **Aluno 4** - [GitHub](https://github.com/aluno4)
 
 ---
+
 
 ## 📄 Licença
 
