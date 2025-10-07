@@ -144,7 +144,7 @@ O dashboard pode ser criado no **Power BI** (arquivo `.pbix`), **Metabase** ou *
 ---
 
 
-
+at
 ### **3. Executar o main.py**
 
 ```bash
