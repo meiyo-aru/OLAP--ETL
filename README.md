@@ -157,16 +157,6 @@ Ou execute `data/connect_db_DW.py` para criar o banco e as tabelas via Python.
 ---
 
 
-## 🤝 Contribuidores
-
-* **Seu Nome** - [GitHub](https://github.com/seuusuario)
-* **Colega 2** - [GitHub](https://github.com/colega2)
-* **Colega 3** - [GitHub](https://github.com/colega3)
-* **Colega 4** - [GitHub](https://github.com/colega4)
-
----
-
-
 ## 📄 Licença
 
 Este projeto é apenas para fins acadêmicos e não possui licença comercial.
